@@ -534,6 +534,105 @@
     color: var(--text);
   }
 
+  /* --- FOOTNOTES --- */
+  sup.fn {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7em;
+    font-weight: 700;
+    vertical-align: super;
+    line-height: 0;
+    margin-left: 2px;
+  }
+  sup.fn a {
+    color: var(--yellow);
+    text-decoration: none;
+    padding: 1px 3px;
+    border-radius: 3px;
+    transition: background 0.2s, color 0.2s;
+  }
+  sup.fn a:hover {
+    background: var(--yellow-dim);
+    color: var(--yellow);
+  }
+
+  /* --- SOURCE NOTE --- */
+  .source-note {
+    margin-top: 32px;
+    padding: 16px 20px;
+    background: var(--yellow-dim);
+    border-left: 3px solid var(--yellow);
+    border-radius: 4px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text);
+    max-width: 820px;
+    font-style: italic;
+  }
+  .source-note strong {
+    color: var(--yellow);
+    font-style: normal;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* --- REFERENCES --- */
+  #references {
+    border-top: 1px solid var(--border);
+  }
+  .references-list {
+    list-style: none;
+    counter-reset: ref-counter;
+    margin-top: 32px;
+    max-width: 900px;
+  }
+  .references-list li {
+    counter-increment: ref-counter;
+    position: relative;
+    padding: 16px 0 16px 48px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text);
+    scroll-margin-top: 80px;
+  }
+  .references-list li:last-child { border-bottom: none; }
+  .references-list li::before {
+    content: counter(ref-counter);
+    position: absolute;
+    left: 0;
+    top: 16px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--yellow);
+    background: var(--yellow-dim);
+    width: 32px;
+    height: 24px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .references-list li:target {
+    background: var(--yellow-dim);
+    padding-left: 56px;
+    transition: background 0.6s, padding-left 0.3s;
+  }
+  .references-list a {
+    color: var(--cyan);
+    text-decoration: none;
+    word-break: break-word;
+  }
+  .references-list a:hover { text-decoration: underline; }
+  .references-list em {
+    color: var(--white);
+    font-style: italic;
+  }
+
   /* --- FOOTER --- */
   footer {
     text-align: center;
@@ -573,6 +672,7 @@
     <a href="#industry">Industry</a>
     <a href="#analysis">Analysis</a>
     <a href="#evaluation">Evaluation</a>
+    <a href="#references">References</a>
   </div>
 </nav>
 
@@ -597,14 +697,19 @@
   <div class="section-label">I. Executive Summary</div>
   <div class="section-title">The Big Picture</div>
   <p>
-    This report analyzes Corsair Gaming, Inc. through three key frameworks from Bauer and Erdogan's <em>Organizational Behavior</em>: <span class="highlight">Organizational Structure and Change (Ch. 14)</span>, <span class="highlight">Communication (Ch. 8)</span>, and <span class="highlight">Diversity and Inclusion (Ch. 2)</span>. Corsair, a U.S. gaming hardware manufacturer founded in 1994 and headquartered in Milpitas, California, provides a compelling case study because it combines rapid acquisition-driven growth, intense competitive pressure, and short product lifecycles in a global market.
+    This report analyzes Corsair Gaming, Inc. through three key frameworks from Bauer and Erdogan's <em>Organizational Behavior</em>: <span class="highlight">Organizational Structure and Change (Ch. 14)</span>, <span class="highlight">Communication (Ch. 8)</span>, and <span class="highlight">Diversity and Inclusion (Ch. 2)</span>.<sup class="fn"><a href="#ref-1">1</a></sup> Corsair, a U.S. gaming hardware manufacturer founded in 1994 and headquartered in Milpitas, California, provides a compelling case study because it combines rapid acquisition-driven growth, intense competitive pressure, and short product lifecycles in a global market.<sup class="fn"><a href="#ref-4">4</a></sup>
   </p>
   <p>
-    Our investigation reveals three interconnected organizational challenges. First, Corsair's expansion through acquisitions of brands such as Elgato, Origin PC, and SCUF Gaming has produced a complex matrix-like structure that reduces organizational unity, creates unclear reporting relationships, and generates significant coordination costs. Second, this structural complexity directly drives communication breakdowns documented in employee reviews: low Glassdoor ratings (2.8/5), poor psychological safety, and absent informational and interactional justice. Third, while Corsair demonstrates measurable demographic diversity, persistent gender imbalance and cultural barriers rooted in the same communication failures prevent the company from realizing the full organizational benefits of inclusion.
+    Our investigation reveals three interconnected organizational challenges. First, Corsair's expansion through acquisitions of brands such as Elgato, Origin PC, and SCUF Gaming has produced a complex matrix-like structure that reduces organizational unity, creates unclear reporting relationships, and generates significant coordination costs.<sup class="fn"><a href="#ref-4">4</a></sup> Second, this structural complexity directly drives communication breakdowns documented in employee reviews: low Glassdoor ratings (2.8/5), poor psychological safety, and absent informational and interactional justice.<sup class="fn"><a href="#ref-5">5</a></sup> Third, while Corsair demonstrates measurable demographic diversity, persistent gender imbalance and cultural barriers rooted in the same communication failures prevent the company from realizing the full organizational benefits of inclusion.<sup class="fn"><a href="#ref-3">3</a></sup><sup class="fn"><a href="#ref-11">11</a></sup>
   </p>
   <p>
     Together, these findings illustrate how structural decisions cascade into cultural and behavioral outcomes, and how each dimension reinforces or undermines the others.
   </p>
+
+  <div class="source-note">
+    <strong>A note on sources</strong>
+    Unless otherwise stated via footnote, all organizational behavior concepts, frameworks, and theoretical definitions referenced throughout this report are drawn from Bauer and Erdogan's <em>Organizational Behavior</em> (Version 5.0, FlatWorld, 2024).<sup class="fn"><a href="#ref-1">1</a></sup>
+  </div>
 </section>
 
 <!-- INDUSTRY CONTEXT -->
@@ -615,28 +720,28 @@
   <div class="industry-grid">
     <div class="stat-card">
       <div class="stat-number">$6–7B</div>
-      <div class="stat-label">Market Size (2024)</div>
-      <div class="stat-desc">The gaming peripherals market is projected to grow to $11–16 billion by the early 2030s.</div>
+      <div class="stat-label">Market Size (2024)<sup class="fn"><a href="#ref-6">6</a></sup></div>
+      <div class="stat-desc">The gaming peripherals market is projected to grow to $11–16 billion by the early 2030s.<sup class="fn"><a href="#ref-10">10</a></sup></div>
     </div>
     <div class="stat-card">
       <div class="stat-number">8–12%</div>
-      <div class="stat-label">Corsair's Market Share</div>
+      <div class="stat-label">Corsair's Market Share<sup class="fn"><a href="#ref-8">8</a></sup></div>
       <div class="stat-desc">Competing against Logitech (15–20%) and Razer in a monopolistic competition landscape.</div>
     </div>
     <div class="stat-card">
       <div class="stat-number">12–18 mo</div>
-      <div class="stat-label">Product Lifecycles</div>
+      <div class="stat-label">Product Lifecycles<sup class="fn"><a href="#ref-4">4</a></sup></div>
       <div class="stat-desc">Extremely short cycles requiring constant innovation, new releases, and high R&D investment.</div>
     </div>
     <div class="stat-card">
       <div class="stat-number">4+</div>
-      <div class="stat-label">Major Acquisitions</div>
+      <div class="stat-label">Major Acquisitions<sup class="fn"><a href="#ref-9">9</a></sup></div>
       <div class="stat-desc">Elgato, Origin PC, SCUF Gaming, and Drop — creating a portfolio of semi-autonomous subsidiaries.</div>
     </div>
   </div>
 
   <p class="industry-text">
-    Corsair Gaming designs and manufactures gaming peripherals, PC components, and streaming equipment. Going public on the Nasdaq in 2020 (ticker: CRSR), the company targets the premium segment of the market, building strong brand loyalty but also deep dependence on consumer disposable income. Operating in an industry defined by intense competition, limited supplier bargaining power, and rapid product turnover, Corsair's ecosystem strategy: designing products that integrate seamlessly to pull consumers deeper into the brand family, adds further internal coordination demands on top of the complexity introduced by its acquisition history.
+    Corsair Gaming designs and manufactures gaming peripherals, PC components, and streaming equipment. Going public on the Nasdaq in 2020 (ticker: CRSR),<sup class="fn"><a href="#ref-4">4</a></sup> the company targets the premium segment of the market, building strong brand loyalty but also deep dependence on consumer disposable income. Operating in an industry defined by intense competition, limited supplier bargaining power, and rapid product turnover,<sup class="fn"><a href="#ref-2">2</a></sup><sup class="fn"><a href="#ref-7">7</a></sup> Corsair's ecosystem strategy: designing products that integrate seamlessly to pull consumers deeper into the brand family, adds further internal coordination demands on top of the complexity introduced by its acquisition history.
   </p>
 </section>
 
@@ -677,9 +782,9 @@
           <h4>Problems Identified</h4>
           <ul>
             <li>Matrix structure violates unity of command where employees report to multiple managers across functional and product lines, creating role ambiguity and power struggles.</li>
-            <li>Acquisition-driven expansion (Elgato, Origin PC, SCUF, Drop) layers subsidiary brand cultures onto an already complex structure, multiplying coordination costs.</li>
+            <li>Acquisition-driven expansion (Elgato, Origin PC, SCUF, Drop) layers subsidiary brand cultures onto an already complex structure, multiplying coordination costs.<sup class="fn"><a href="#ref-9">9</a></sup></li>
             <li>Decentralization paired with unclear reporting lines produces redundant decision-making and inconsistent execution across business units.</li>
-            <li>Each restructuring (for example the Drop consolidation) introduces new disruption — shifting relationships, uncertain job security, and communication gaps.</li>
+            <li>Each restructuring (for example the Drop consolidation) introduces new disruption — shifting relationships, uncertain job security, and communication gaps.<sup class="fn"><a href="#ref-9">9</a></sup></li>
           </ul>
         </div>
         <div class="panel-column">
@@ -705,11 +810,11 @@
         <div class="panel-column">
           <h4>Problems Identified</h4>
           <ul>
-            <li>A "toxic" environment at Corsair weakens psychological safety, leading employees to filter out or withhold critical information due to a fear of punishment.</li>
+            <li>A "toxic" environment at Corsair weakens psychological safety, leading employees to filter out or withhold critical information due to a fear of punishment.<sup class="fn"><a href="#ref-5">5</a></sup></li>
             <li>Upper management subconsciously practices selective perception, unconsciously filtering out viewpoints that do not align with their existing beliefs.</li>
-            <li>Management's common poor listening signals to employees that their opinions are not valued, which damages the employee-organization relationship and increases the likelihood of turnover.</li>
-            <li>Corsair’s complex matrix structure creates communication inefficiencies that lead to wasted time as messages travel through various organizational levels.</li>
-            <li>A "very political" environment and a lack of transparency during mergers erode the baseline trust and informational justice necessary for organizational functioning.</li>
+            <li>Management's common poor listening signals to employees that their opinions are not valued, which damages the employee-organization relationship and increases the likelihood of turnover.<sup class="fn"><a href="#ref-5">5</a></sup></li>
+            <li>Corsair’s complex matrix structure creates communication inefficiencies that lead to wasted time as messages travel through various organizational levels.<sup class="fn"><a href="#ref-5">5</a></sup></li>
+            <li>A "very political" environment and a lack of transparency during mergers erode the baseline trust and informational justice necessary for organizational functioning.<sup class="fn"><a href="#ref-5">5</a></sup></li>
           </ul>
         </div>
         <div class="panel-column">
@@ -736,7 +841,7 @@
         <div class="panel-column">
           <h4>Problems Identified</h4>
           <ul>
-            <li>Persistent gender imbalance: 69% men vs. 31% women in the workforce, despite having measurable ethnic diversity (40% Caucasian, 26.5% Asian, 23% Hispanic, 6.5% Black).</li>
+            <li>Persistent gender imbalance: 69% men vs. 31% women in the workforce,<sup class="fn"><a href="#ref-11">11</a></sup> despite having measurable ethnic diversity (40% Caucasian, 26.5% Asian, 23% Hispanic, 6.5% Black).<sup class="fn"><a href="#ref-3">3</a></sup></li>
             <li>Similarity-attraction bias and unconscious bias contribute to underrepresentation, especially in leadership and technical roles.</li>
             <li>Diversity without inclusion — demographic representation exists, but the toxic culture and absence of psychological safety disproportionately silence marginalized employees.</li>
             <li>Communication failures compound inclusion barriers: those already facing identity-based marginalization are hit hardest by the lack of voice.</li>
@@ -776,6 +881,48 @@
       <p>Inclusion cannot be reduced to demographic representation. Corsair's relatively strong diversity metrics exist alongside a workplace culture described as toxic and unreceptive. When psychological safety, equitable processes, and genuine responsiveness are absent, diverse employees are present but excluded from meaningful participation. Structure, communication, and inclusion are interdependent dimensions.</p>
     </div>
   </div>
+</section>
+
+<!-- REFERENCES -->
+<section id="references">
+  <div class="section-label">V. References</div>
+  <div class="section-title">Works Cited</div>
+
+  <ol class="references-list">
+    <li id="ref-1">
+      Bauer, T., &amp; Erdogan, B. (2024). <em>Organizational behavior</em> (Version 5.0). FlatWorld.
+    </li>
+    <li id="ref-2">
+      Cognitive Market Research. (2024). <em>Gaming accessories market trends and future opportunities</em>. <a href="https://www.cognitivemarketresearch.com/articles/gaming-accessories-market-trends-and-future-opportunities" target="_blank" rel="noopener">https://www.cognitivemarketresearch.com/articles/gaming-accessories-market-trends-and-future-opportunities</a>
+    </li>
+    <li id="ref-3">
+      Corsair Gaming, Inc. (2023). <em>ESG report: Employee training &amp; diversity data</em>. <a href="https://assets.corsair.com/image/upload/v1702074744/akamai/landing/social-impact/pdf/CORSAIR_ESG_DD_Employee_Training_-_December_2023.pdf" target="_blank" rel="noopener">https://assets.corsair.com/image/upload/v1702074744/akamai/landing/social-impact/pdf/CORSAIR_ESG_DD_Employee_Training_-_December_2023.pdf</a>
+    </li>
+    <li id="ref-4">
+      Corsair Gaming, Inc. (2023). <em>Form 10-K for the fiscal year ended December 31, 2023</em>. U.S. Securities and Exchange Commission. <a href="https://ir.corsair.com/static-files/af253c4a-b965-41bc-bac9-d21999b25788" target="_blank" rel="noopener">https://ir.corsair.com/static-files/af253c4a-b965-41bc-bac9-d21999b25788</a>
+    </li>
+    <li id="ref-5">
+      Glassdoor. (2024). <em>Corsair Gaming employee reviews</em>. Retrieved March 31, 2026, from <a href="https://www.glassdoor.com/Reviews/Corsair-Reviews-E267388.htm" target="_blank" rel="noopener">https://www.glassdoor.com/Reviews/Corsair-Reviews-E267388.htm</a>
+    </li>
+    <li id="ref-6">
+      Grand View Research. (2024). <em>Gaming peripheral market size, share &amp; trends analysis report, 2024–2030</em>. <a href="https://www.grandviewresearch.com/industry-analysis/gaming-peripherals-market" target="_blank" rel="noopener">https://www.grandviewresearch.com/industry-analysis/gaming-peripherals-market</a>
+    </li>
+    <li id="ref-7">
+      Mordor Intelligence. (2024). <em>Gaming accessories market size &amp; share analysis — Industry report, 2025–2030</em>. <a href="https://www.mordorintelligence.com/industry-reports/gaming-accessories-market" target="_blank" rel="noopener">https://www.mordorintelligence.com/industry-reports/gaming-accessories-market</a>
+    </li>
+    <li id="ref-8">
+      PortersFiveForces.com. (2024). <em>Corsair Porter's Five Forces analysis</em>. Retrieved March 23, 2026, from <a href="https://portersfiveforce.com/products/corsair-five-forces-analysis" target="_blank" rel="noopener">https://portersfiveforce.com/products/corsair-five-forces-analysis</a>
+    </li>
+    <li id="ref-9">
+      The Meridiem. (2026, February 25). <em>Corsair consolidates Drop platform as vertical gaming strategy matures</em>. <a href="https://www.themeridiem.com/consumer-tech/2026/2/25/corsair-consolidates-drop-platform-as-vertical-gaming-strategy-matures" target="_blank" rel="noopener">https://www.themeridiem.com/consumer-tech/2026/2/25/corsair-consolidates-drop-platform-as-vertical-gaming-strategy-matures</a>
+    </li>
+    <li id="ref-10">
+      Trefis. (n.d.). <em>Corsair Gaming (CRSR) valuation ratios comparison</em>. Retrieved March 23, 2026, from <a href="https://www.trefis.com/data/companies/CRSR" target="_blank" rel="noopener">https://www.trefis.com/data/companies/CRSR</a>
+    </li>
+    <li id="ref-11">
+      Zippia. (2024). <em>Corsair components demographics</em>. <a href="https://www.zippia.com/corsair-components-careers-20299/demographics/" target="_blank" rel="noopener">https://www.zippia.com/corsair-components-careers-20299/demographics/</a>
+    </li>
+  </ol>
 </section>
 
 <!-- FOOTER -->
